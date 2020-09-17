@@ -219,7 +219,7 @@
 				success: function(data) {
 					// 인증 성공
 					if (data.aCode == 0) {
-						alert("AD 인증 성공")
+						/* alert("AD 인증 성공") */
 						result= "0";
 					// 인증 실패
 					} else {
@@ -292,7 +292,7 @@
 				success: function(data) {
 					// 인증 성공
 					if (data.rCode == 0) {
-						alert("OTP 인증 성공")
+						/* alert("OTP 인증 성공") */ 
 						result="0";
 					// 인증 실패
 					} else {
