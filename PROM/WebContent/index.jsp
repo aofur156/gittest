@@ -189,21 +189,20 @@
 			var sUserID=$('#adidmodal').val()
 			var sUserPW=$('#adpwmodal').val();
 			
-			if(!sUserID){
-				alert("아이디를 입력해 주세요.");
-				$('#adidmodal').focus();
-				return 1;
-			}
-			if(sUserID && !sUserPW){
-				alert("비밀번호를 입력해 주세요.");
-				$('#adpwmodal').focus();
-				return 1;
-			}
+ 			if(!sUserID){
+ 				alert("아이디를 입력해 주세요.");
+ 				$('#adidmodal').focus();
+ 				return 1;
+ 			}
+ 			if(sUserID && !sUserPW){
+ 				alert("비밀번호를 입력해 주세요.");
+ 				$('#adpwmodal').focus();
+ 				return 1;
+ 			}
 			
 			//TODO "수정 필요"
 			var url="LDAP://172.10.0.30";
 			var result;
-			var test = "pull request test";
 			
 			/* if(sUserID && sUserPW){ */
 			$.ajax({
@@ -242,38 +241,38 @@
 			var result;
 			var otp = $('#otpmodal').val();
 			var userId = $('#adidmodal').val();
-			var userPw = $('#adpwmodal').val();
+ 			var userPw = $('#adpwmodal').val();
 			
-			//아이디와 비밀번호 모두 입력하고
-			if(userId && userPw){
-				//접속시도하는 아이디가 admin이 아닐때
-				if(userId != "admin@prom"){
+ 			//아이디와 비밀번호 모두 입력하고
+ 			if(userId && userPw){
+ 				//접속시도하는 아이디가 admin이 아닐때
+ 				if(userId != "admin@prom"){
 					
-					// OTP를 입력하지 않았을 때
-					if (!otp) {
-						alert('OTP를 입력해 주세요.');
-						$('#loginOTP').focus();
-						return 1;
-					}
+ 					// OTP를 입력하지 않았을 때
+ 					if (!otp) {
+ 						alert('OTP를 입력해 주세요.');
+ 						$('#loginOTP').focus();
+ 						return 1;
+ 					}
 					
-					// 숫자만
-					var regexp = /^[0-9]*$/
-					if(!regexp.test(otp)){
-						alert('OTP는 숫자만입력');
-						$('#loginOTP').focus();
-						return 1;
-					}
+ 					// 숫자만
+ 					var regexp = /^[0-9]*$/
+ 					if(!regexp.test(otp)){
+ 						alert('OTP는 숫자만입력');
+ 						$('#loginOTP').focus();
+ 						return 1;
+ 					}
 					
-					// 자릿수 제한
-					if (otp.length != 6) {
-						alert('자릿수가 올바르지 않습니다. 다시 입력해 주세요.');
-						$('#loginOTP').focus();
-						return 1;
-					}
-				}
-			}else{
-				return 1;
-			}
+ 					// 자릿수 제한
+ 					if (otp.length != 6) {
+ 						alert('자릿수가 올바르지 않습니다. 다시 입력해 주세요.');
+ 						$('#loginOTP').focus();
+ 						return 1;
+ 					}
+ 				}
+ 			}else{
+ 				return 1;
+ 			}
 			
 			$.ajax({
 				url: '/login/otpLogin.do',

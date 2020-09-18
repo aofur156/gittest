@@ -311,16 +311,16 @@ public class LoginController {
 			HttpServletRequest request) {
 		
 		//TODO "수정 필요"
-		String result="";
+		 String result="";
 		
-		String sUserID = login.getsUserID();
-		String otpNumber = login.getOtpNumber();
+		 String sUserID = login.getsUserID();
+		 String otpNumber = login.getOtpNumber();
 		
 		
 		//OTP 서비스 없어서 임의의 6자리 들어오면 패스
-		if(otpNumber.length() == 6 ) {
-			result = "0";
-		}
+ 		if(otpNumber.length() == 6 ) {
+ 			result = "0";
+ 		}
 		
 		//admin 전용 통로
 		if(sUserID.equals("admin@prom")) {
@@ -432,16 +432,16 @@ public class LoginController {
 
 	
 	
-		String result="";
-		String userID = login.getsUserID();
-		String userPW = login.getsUserPW();
-		String hashPW = SHA256Util.hash(userPW);
+ 		String result="";
+ 		String userID = login.getsUserID();
+ 		String userPW = login.getsUserPW();
+ 		String hashPW = SHA256Util.hash(userPW);
 		
-		//입력 pw와 비교하기위해 사용자 정보 불러오기
-		UserVO user = userService.selectUserBySUserID(userID);
+ 		//입력 pw와 비교하기위해 사용자 정보 불러오기
+ 		UserVO user = userService.selectUserBySUserID(userID);
 		
-		// admin@prom 으로 로그인 시도하고 정보가 맞을때
-		if (userID.equals("admin@prom") && user.getsUserPW().equals(hashPW) ) {
+ 		// admin@prom 으로 로그인 시도하고 정보가 맞을때
+ 		if (userID.equals("admin@prom") && user.getsUserPW().equals(hashPW) ) {
 			
 				//ad 연동
 				UserVO dbUser = userService.selectUserByADid(login.getsUserID());
