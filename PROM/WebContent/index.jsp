@@ -203,7 +203,6 @@
 			//TODO "수정 필요"
 			var url="LDAP://172.10.0.30";
 			var result;
-			var test = "pull request test";
 			
 			/* if(sUserID && sUserPW){ */
 			$.ajax({
